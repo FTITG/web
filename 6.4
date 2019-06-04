@@ -10,7 +10,30 @@
             li{
               list-style-type: none;
             }
+            
+            
+            
+            横向占满整个页面的盒子不设宽度
     
 选择器的设置方法：
+1.同类盒子使用class选择不要用id
+2.选择class="top"盒子中的div:
+style设置：.大盒子  空格 小盒子
+.top div{
+			width:1200px;
+			height:45px;
+			margin:0 auto;
+ body设置：
+         <div class="top">
+		<div >
+			<p>
+				<span><img src="phone.png"/>400-808-8682</span>
+				<a href="#">请登录</a>|
+				<a href="#">注册</a>
+			</p>
+		</div>
+	</div>
+                     
+
     
     
