@@ -12,18 +12,23 @@
             }
             
             
-            
-            横向占满整个页面的盒子不设宽度
+           
+横向占满整个页面的盒子不设宽度
     
+
+
+
+
+
 选择器的设置方法：
 1.同类盒子使用class选择不要用id
 2.选择class="top"盒子中的div:
-style设置：.大盒子  空格 小盒子
+style内容：.大盒子  空格 小盒子
 .top div{
 			width:1200px;
 			height:45px;
 			margin:0 auto;
- body设置：
+ html内容：
          <div class="top">
 		<div >
 			<p>
@@ -33,6 +38,195 @@ style设置：.大盒子  空格 小盒子
 			</p>
 		</div>
 	</div>
+	
+
+
+
+
+
+
+如何防止父元素塌陷：
+1.给父元素设置固定height
+2.clear：多写一个盒子在父元素内，不设置height width clear：left right or both
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<style>
+		#largest{
+			width:320px;
+			background-color: orange;
+			border:1px solid purple;
+		}
+		.one{
+			margin:2px;
+			width:100px;
+			height:100px;
+			float:left;
+			background-color: green;
+
+		}
+		.four{
+			clear:left;
+			border:1px solid red;
+		}
+
+	</style>
+</head>
+	<body>
+		<div id="largest">
+			<div class="one"></div>
+			<div class="one"></div>
+			<div class="one"></div>
+			<div class="four"></div>
+			
+		
+		</div>
+	</body>
+</html>
+
+
+
+	
+	
+	
+	
+	
+酒店预订作业代码：
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>酒店预订</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+
+		}
+		a{
+			text-decoration: none; <--去除下划线-->
+		}
+		li{
+			list-style-type: none; <--去除序号小圆点-->
+		}
+		.top{
+			height:45px;
+			background-color: #333;
+		}
+		.top div{
+			width:1200px;
+			height:45px;
+			margin:0 auto;
+			
+		}
+		.top p{
+			float:right;
+			color:#fff;
+		}
+		.top a{
+			color:#fff;  <--更改超链接文字设置要写在a标签里-->
+		}
+		.nav{
+			width:1200px;
+		}
+		.nav img{
+			float:left;
+		}
+		.nav ul{
+			float:right;
+		}
+		.nav ul li{      <--一级一级往下选择-->
+			float:left;
+			width:100px;
+			
+			height:80px;
+			text-align: center;
+
+		}
+		.nav a{
+			color:#000;
+			font-size:20px;
+
+		}
+		.nav li:hover{
+			border-bottom: 3px solid red;
+
+		}
+		.nav li:hover a{   <--悬浮时某盒子里链接设置的写法-->
+			color:#f00;
+
+		}
+		.main-wrap{
+			height:724px;
+			background-color: #f5f5f5;
+		}
+		.crumb{
+			width:1200px;
+			
+			line-height: 97px;
+			margin:0 auto;
+		}
+		.crumb{
+
+		}
+		.fix{
+			width:47px;
+			position:fixed;
+			right:0;
+			top:130px;
+		}
+		.fix li{
+			width:47px;
+			height:47px;
+			background-color: #1c5080;
+		}
+		.fix li:last-child{    <--最后一个元素的设置-->
+			height:150px;
+			background-color: #e8420a;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="top">      <--网页最上方的横条，不设置width-->
+		<div >
+			<p>
+				<span><img src="phone.png"/>400-808-8682</span><--span将块级元素横向排列-->
+				<a href="#">请登录</a>|
+				<a href="#">注册</a>
+			</p>
+		</div>
+	</div>
+	<div class="nav">
+		<img src="logo.png" alt="">
+		<ul>
+			<li><a href="#">首页</a></li>    <--导航栏应用无序列表-->
+			<li><a href="#">目的地</a></li>
+			<li><a href="#">亲子游学</a></li>
+			<li><a href="#">酒店预订</a></li>
+			<li><a href="#">车辆接送</a></li>
+			<li><a href="#">签证代办</a></li>
+			<li><a href="#">精彩瞬间</a></li>
+		</ul>
+	</div>
+	<div id="main-wrap">
+		<div id="crumb">
+			<a href="#">首页</a>
+			<a href="#">酒店预订</a>
+			<a href="#">曼谷悦榕庄酒店（酒店名称）</a>
+		</div>
+	</div>
+	<ul class="fix">
+		<li><a href="#"><img src="qq.png"/></a></li>
+		<li><a href="#"><img src="phone.png"/></a></li>
+		<li><a href="#"><img src="wx.png"/></a></li>
+		<li><a href="#"><img src="wb.png"/></a></li>
+		<li><a href="#"><img src=""/></a></li>
+		<li><a href="#"><img src=""/></a></li>
+	</ul>
+		</body>
+</html>
                      
 
     
